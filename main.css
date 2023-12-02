@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "Roblox";
+    src: url(fonts/Roblox-Font-Regular.ttf) format("truetype");
+    font-weight: normal;
+  }
+  h1 {
+    font-size: 6em;
+    font-family: "Roblox", sans-serif;
+    font-weight: bold;
+  }

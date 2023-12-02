@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pluses and Minuses</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+  </head>
+  <!-- #using css -->
+  <style>
+    body {
+      background-color: #f0e68c;
+      margin-left: 450px;
+      margin-right: 400px;
+    }
+    .col {
+      padding-bottom: 2%;
+      padding-right: 2%;
+      position: absolute;
+      background-color: rgb(215, 114, 114);
+      margin-right: 3%;
+      max-width: 500px;
+      padding: 70px;
+      margin-left: 3%;
+      border-radius: 16px;
+    }
+
+    /* select.item{
+        position: relative;
+    } */
+    #timer_container > #time {
+      margin: 0;
+      color: red;
+      position: relative;
+      font-family: arial;
+      font-size: 60px;
+      font-weight: bold;
+      top: 20%;
+      left: 5%;
+      text-align: center;
+    }
+    #timer_container {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 100%;
+      top: 5%;
+      left: 85%;
+      margin: 0 auto;
+    }
+    #timer_container > div {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 6px;
+      height: 10px;
+      background-color: rgba(35, 10, 10, 0.5);
+    }
+    .btn-primary {
+    background-image:  url('book.png');
+    height: 50px;
+    width: 50px;
+    background-color: inherit;
+    background-size: cover;
+    border: navajowhite;
+    position: absolute;
+    top: 2%;
+    left:2%
+        
+    }
+    .btn-danger{
+    background-image:  url('right-arrow.png');
+    height: 50px;
+    width: 50px;
+    background-color: inherit;
+    background-size: cover;
+    border: navajowhite;
+    position: absolute;
+
+    }
+    .imgscale{
+    height: 300px;
+    width: 300px;
+    background-color: inherit;
+    /* background-size: cover; */
+    border: navajowhite;
+    position: absolute;;
+    top: 23%;
+    right: 4%;
+    }
+    .imgcomp{
+    height: 350px;
+    width: 350px;
+    background-color: inherit;
+    /* background-size: cover; */
+    border: navajowhite;
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    }
+    @font-face {
+    font-family: "Roblox";
+    src: url(fonts/Roblox-Font-Regular.ttf) format("truetype");
+    font-weight: normal;
+  }
+  h1 {
+    font-size: 3em;
+    margin-top: 3%;
+    font-family: "Roblox", sans-serif;
+    font-weight: bold;
+  }
+  /* ------------------------------------------------------- */
+  #container{
+  margin: 10px auto;
+  margin-left: 20%;
+  max-width: 300px;
+  padding: 30px;
+  
+}
+
+.form-wrap{
+  background-color: #dd7f7f;
+  padding: 55px 15px;
+  color: #333;
+  border-radius: 16px;
+  
+
+}
+.an{
+    position: absolute;
+    margin-left: 28%;
+    margin-top: 10%;
+}
+.bg-music{
+  position: absolute;
+}
+.btn1{
+  background-color: transparent;
+  color: #f0e68c;
+  font-size: 78px;
+  border: none;
+  display: block;
+  margin: 0 auto;
+  opacity: .3;
+  transition: all linear 2s;
+}
+.btn1:hover{
+  opacity: 1;
+}
+  </style>
+
+  <body>
+    <h1>Pluses And Minuses Game</h1>
+    <br />
+    <!-- <div class="bg-music">
+      <audio controls muted>
+        <source src="lost.mp3" >
+      </audio>
+      <button class="btn1">
+        <i src="volume.png" class="fa fa-play-circle-o"></i>
+        <i src="mute.png" class="fa fa-pause-circle-o"></i> -->
+
+      </button>
+    </div>
+    <img src="scale.png" class="imgscale"></img>
+    <img src="compare.png" class="imgcomp"></img>
+
+    <!-- <div id="js_timer">
+        <div id = "timer">
+            00:00
+        </div>
+    </div> -->
+    <!-- <div id="Timer"></div> -->
+    <div id="timer_container">
+      <p id="time"></p>
+    </div>
+
+    <!-- Scrollable modal -->
+    <!-- Button trigger modal -->
+<button type="image" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    
+    
+  </button>
+  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Rules to be followed:-</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h6>....The Zero Game is a mathematical puzzle game that requires the player to insert plus or minus signs between a sequence of numbers to obtain a sum of zero.<br><br>
+          The rules of the game are straightforward, but the game requires logical thinking and mathematical skills to solve.<br> because there are some numbers whose sum is not zero and it will print no solution.<br><br>
+          Players must carefully choose which signs to insert between the numbers to achieve a sum of zero on given time.
+          <br><br><br></h6>
+          <h4>ENJOY!!!</h4>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <!-- Form Wrap Start -->
+    <div class="form-wrap">
+        Enter a Number.
+        <div class="row">
+            <div class="coll-md-6">
+              <input type="text" id="n-input" class="form-control w-50" required/>
+              <br />
+              <button type ="image" id="cal_btn" class="btn btn-danger">
+              </button>
+      
+    </div>
+    <!-- Form Wrap Close -->
+
+  </div>
+  <!-- Container Close -->
+   
+
+        <!-- <button id="check" class="btn btn-outline-success">
+                check
+            </button> -->
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    
+
+    <div id="main" class="row">
+      <div class="col" id="main-col">
+        <!-- <input type="text" style="width:40px"> -->
+      </div>
+    </div>
+    <h1 id="answer" class="an"></h1>
+   
+  </body>
+  <script src="jquery.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css"
+  />
+  <script>
+
+        let timeleft, time;
+        timeleft = time = 30;
+        let remainingtime
+        
+    $(document).on("click", "#cal_btn", function () {
+    //   clearTimeout();
+      $(".item").remove();
+      console.log("click");
+      console.log($("#n-input").val());
+      let arr = [1, 2];
+      if (arr.includes($("#n-input").val() % 4)) {
+        swal({
+          title: "This Number has no solution!!",
+          text: "TRY DIFFERENT NUMBERS!!",
+          imageUrl: "no-idea.png",
+        });
+      } else {
+        for (let i = 1; i <= $("#n-input").val(); i++) {
+          let d =
+            "<input type='text' class='item' value='" +
+            i +
+            "' style='width:70px;margin-right: 7px;margin-top: 7px;'>";
+
+          $("#main-col").append(d);
+
+          let o =
+            "<select class='item' style='    width: 70px;height: 30px;margin-right: 7px;margin-top: 7px;'>\
+                            <option value='+'>+</option>\
+                            <option value='-'>-</option>\
+                        </select>";
+          if (i != $("#n-input").val()) {
+            $("#main-col").append(o);
+           
+          }
+        }
+       
+
+        
+        
+        $("#time").html(timeleft);
+        $("#timer_container").fadeTo("slow", 1);
+        $("#time").fadeTo("slow", 1);
+        var i, j, rotation, width;
+
+        for (i = 0; i < timeleft; i++) {
+          document.getElementById("timer_container").innerHTML +=
+            "<div class='tictic'></div>";
+        }
+        var x = document.getElementById("timer_container");
+        var y = x.getElementsByTagName("div");
+        width = document.getElementById("timer_container").offsetWidth;
+        for (i = 0; i < timeleft; i++) {
+          rotation = (360 / timeleft) * i;
+          console.log(rotation + "\n");
+          console.log(width + "\n");
+          y[i].style.cssText =
+            "transform:rotate(" +
+            rotation +
+            "deg) translate(0px, -" +
+            width / 2 +
+            "px)";
+        }
+
+        var i = 0;
+        
+        $("#n-input").prop("disabled", true);
+
+         remainingtime = setInterval(function () {
+          $("#time").html(timeleft);
+          y[i].style.backgroundColor = "#ffffff";
+          timeleft -= 1;
+          i += 1;
+          if (timeleft <= 0 && i >= time) {
+            setTimeout(function () {
+              swal({
+                title: "YOU LOOSE!!",
+                text: "TRY AGAIN!!",
+                imageUrl: "game-over.png",
+              });
+              reset();
+            
+            }, 1000);
+            clearInterval(remainingtime);
+            
+            
+             
+
+            $("div").remove(".tictic");
+            $("#time").html("Time out!");
+          }
+        }, 1000);
+      }
+    });
+
+    // $("#cal_btn").click(function () {
+    //     $(".item").remove()
+    //     console.log("click")
+    //     console.log($("#n-input").val())
+    //     let arr = [1, 2]
+    //     if (arr.includes($("#n-input").val() % 4)) {
+    //         alert("no soluction")
+    //     } else {
+    //         for (let i = 1; i <= $("#n-input").val(); i++) {
+
+    //             let d = "<input type='text' class='item' value='" + i + "' style='width:40px;margin-right: 5px;'>"
+
+    //             $("#main-col").append(d)
+
+    //             let o = "<select class='item' style='    width: 40px;height: 28px;margin-right: 5px;'>\
+    //                         <option value='+'>+</option>\
+    //                         <option value='-'>-</option>\
+    //                     </select>"
+    //             if (i != $("#n-input").val()) {
+    //                 $("#main-col").append(o)
+    //             }
+    //         }
+    //     }
+
+    // })
+
+    // $("#check").click(function () {
+    //     item = $('.item')
+    //     let final = "";
+    //     let result =
+    //         $.each(item, function (key, value) {
+    //             // console.log($('.item').eq(key).val())
+    //             final = final + $('.item').eq(key).val()
+    //         });
+    //     console.log(
+    //         addbits(final)
+    //     )
+    //     $("#answer").text(addbits(final))
+    // })
+
+    function reset() {
+      $("#main-col").text("");
+      $("#Timer").text("");
+      $("#n-input").prop("disabled", false);
+      timeleft = time = 30;
+      clearInterval(remainingtime);
+      $("#answer").text("");
+      $("#n-input").val("");
+      setInterval(() => {
+        location.reload();
+      }, 5000);
+    //   location.reload();
+    }
+
+    $(document).on("change", "select", function () {
+      item = $(".item");
+      let final = "";
+      let result = $.each(item, function (key, value) {
+        // console.log($('.item').eq(key).val())
+        final = final + $(".item").eq(key).val();
+      });
+      console.log(addbits(final));
+
+      $("#answer").text(addbits(final));
+      if (addbits(final) == 0 && timeleft > 0) {
+        swal({
+          title: "YOU WON!!!",
+          text: "Answer:- 0",
+          imageUrl: "success.png",
+        });
+        reset();
+      }
+
+      // checkwinner(addbits(final))
+    });
+
+    // function checkwinner(total) {
+    //     if (total == 0 && timeLeft > 0)  {
+    //         alert("you win!")
+    //         clearTimeout(timerId);
+    //         timeLeft = 30
+
+    //     }
+    // }
+
+    function addbits(s) {
+      var total = 0,
+        s = s.match(/[+\-]*(\.\d+|\d+(\.\d+)?)/g) || [];
+
+      while (s.length) {
+        total += parseFloat(s.shift());
+      }
+      return total;
+    }
+
+    var string = "1-2";
+    console.log(addbits(string));
+  </script>
+</html>
